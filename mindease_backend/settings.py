@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-a@=t+eoynfyz#%)%gsjikic=lkwx_@d(%)k%tp1zps!%&(-)#h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.0.160", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -94,6 +94,7 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '5432',
+        'default': dj_database_url.config(default=os.environ.get("DATABASE_URL")),
     }
 }
 
